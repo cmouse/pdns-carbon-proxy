@@ -20,8 +20,10 @@ Dependencies
 Configuring PowerDNS
 --------------------
 
+```
 carbon-ourname=whatever
 carbon-server=127.0.0.1
+```
 
 Data format
 -----------
