@@ -59,6 +59,7 @@ POE::Component::Server::TCP->new(
 
     my $request = HTTP::Request->new('POST', "$URL$server");
     $request->authorization($authz);
+    $request->accept_decodable;
     $request->content_type('application/x-www-form-urlencoded; charset=utf-8');
     $request->content($par);
 
