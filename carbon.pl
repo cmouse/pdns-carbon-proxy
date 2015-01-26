@@ -71,9 +71,9 @@ POE::Component::Server::TCP->new(
     response => sub {
       my ($request_packet, $response_packet) = @_[ARG0, ARG1];
       if ($response_packet->[0]->code != 200) {
-        print time,": Carbon gateway failed\n";
+        print time,": Carbon gateway failed ",$request_packet->[0]->uri,": ", $response_packet->[0]->decoded_content,"\n";
       } else {
-        print time,": Carbon data forwarded\n";
+        print time,": Carbon data forwarded to ",$request_packet->[0]->uri,"\n";
       }
     }
   }
